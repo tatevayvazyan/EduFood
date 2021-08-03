@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.home-page-main-img {
+  position: absolute;
+  width: 100%;
+}
+
+.transparent-white-rect {
+  position: relative;
+  width: 30vw;
+  height: 60vh;
+  max-height: 10%;
+  margin-left: 50%;
+  padding-top: 2%;
+  background: rgba(255, 255, 255, 0.71);
+  text-align: center;
+}
+
+.good-morning-text {
+  word-spacing: 100vh;
+  font-weight: bold;
+  font-size: 4vw;
+  line-height: 110%;
+  color: #5C8B10;
+}
+
+.buttons {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  flex: 1 1 100%;
+  max-width: 100%;
+  margin: 15px;
+  justify-content: space-between;
+  background-color: transparent;
+}
+
+$buttonSize: 67px;
+
+.buttonWrapper {
+  z-index: 1;
+  border-radius: 50%;
+  width: $buttonSize;
+  height: $buttonSize;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  background: rgba(134, 142, 119, 0.34);
+}
+
+.text {
+  text-align: start;
+  margin: 0% 8%;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 32px;
+  color: #565E48;
+}
+
+.dishesButton {
+  font-weight: bold;
+  display: block;
+  font-size: 18px;
+  color: #000000;
+  padding: 10px;
+  margin-left: 55%;
+  background: rgba(243, 220, 207, 0.87);
+  border-radius: 20px;
+}
+
+.nextButton {
+  font-weight: bold;
+  font-size: 18px;
+  color: #000000;
+  padding: 5px 15px;
+  margin-top: 20px;
+  background: rgba(134, 142, 119, 0.34);
+  border-radius: 20px;
+}

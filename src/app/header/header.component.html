@@ -1,0 +1,32 @@
+<div class="headerContainer">
+  <div>
+    <img class="logo"
+         src="assets/il_fullxfull.svg"
+         alt="icon">
+  </div>
+  <div class="navigation">
+    <span *ngFor="let navItem of navigation"
+          (click)="navigate(navItem)"
+          class="navItem"
+    >
+      {{navItem}}
+    </span>
+  </div>
+  <div class="searchDiv">
+    <input class="searchInput" type="text">
+    <div class="searchImage">
+      <img src="../../assets/eclipse.svg" alt="">
+      <img src="../../assets/vector.svg" alt="">
+    </div>
+  </div>
+  <div>
+    <span
+      (click)="onLanguageSelect($event)"
+      [ngClass]="selectedLanguage=='Arm'
+        ? 'activeLang lang':'lang'">Arm</span>
+    <span
+      (click)="onLanguageSelect($event)"
+      [ngClass]="selectedLanguage=='Eng'
+        ? 'activeLang lang':'lang'">Eng</span>
+  </div>
+</div>
