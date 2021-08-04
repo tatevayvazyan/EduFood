@@ -4,10 +4,14 @@ import { HomePageComponent } from "./home-page/home-page.component";
 import { LunchesComponent } from "./lunches/lunches.component";
 
 const routes: Routes = [
-  {path: 'all', component: HomePageComponent},
-  {path: 'lunches', component: LunchesComponent},
-  {path: '', component: HomePageComponent},
-
+  {
+    path: '',
+    loadChildren: () => import('./home-page/home-page.module').then(m => m.HomePageModule)
+  },
+  {
+    path: 'lunches',
+    loadChildren: () => import('./lunches/lunches.module').then(m => m.LunchesModule)
+  }
 ]
 
 @NgModule({

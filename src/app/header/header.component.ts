@@ -7,19 +7,18 @@ import { Router } from "@angular/router";
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  selectedLanguage: string = 'Arm';
-  // readonly menu = ['All', 'Articles', 'Bakery', 'Dishes', 'Diet', 'Dessert'];
-  readonly navigation = ['All', 'Lunches'];
+  readonly navigation = [{
+    name: 'All', 
+    path: '',
+  }, {
+    name: 'Lunches', 
+    path: 'lunches'
+  }];
 
   constructor(private routerModule: Router) {
   }
 
-  onLanguageSelect($event: MouseEvent) {
-    $event.preventDefault();
-    this.selectedLanguage = ($event.target! as HTMLSpanElement).innerText;
-  }
-
-  navigate(menuItem: String) {
-    this.routerModule.navigate([menuItem.toLowerCase()])
+  navigate(menuItem: any) {
+    this.routerModule.navigate([menuItem.path]);
   }
 }
