@@ -13,7 +13,14 @@ export class HeaderComponent {
   }, {
     name: 'Lunches', 
     path: 'lunches'
-  }];
+  }, {
+    name: 'Sign In', 
+    path: 'signIn'
+  }, {
+    name: 'Sign Up', 
+    path: 'signUp'
+  }
+];
 
   constructor(private routerModule: Router) {
   }

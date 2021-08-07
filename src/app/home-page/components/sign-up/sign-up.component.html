@@ -1,0 +1,56 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label class="form-label">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      formControlName="name"
+    />
+    <div *ngIf="userForm.controls['name'].errors">
+      <div *ngIf="userForm.controls['name'].errors.required" class="form-error">
+        Please enter a name
+      </div>
+      <div *ngIf="userForm.controls['name'].errors.minlength" class="form-error">
+        min length for name is 3
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="form-label">Email</label>
+    <input
+      type="text"
+      class="form-control"
+      formControlName="email"
+    />
+    <div *ngIf="userForm.controls['email'].hasError('pattern')" class="form-error">
+      This is not valid email
+    </div>
+  </div>
+  <div formGroupName="address">
+    <div class="form-group">
+      <label class="form-label">Country</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="country"
+      />
+    </div>
+    <div class="form-group">
+      <label class="form-label">City</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="city"
+      />
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="form-label">Age</label>
+    <input
+      type="number"
+      class="form-control"
+      formControlName="age"
+    />
+  </div>
+  <button type="submit">Submit</button>
+</form>
