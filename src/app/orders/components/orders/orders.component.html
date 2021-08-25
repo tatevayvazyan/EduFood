@@ -1,0 +1,20 @@
+<table>
+    <thead>
+        <tr>
+            <th>username</th>
+            <th>order</th>
+            <th>total price</th>
+            <th>user id</th>
+        </tr>
+    </thead>
+    <tr *ngFor="let order of orders">
+        <td>{{ order.user.username }}</td>
+        <td>
+            <p *ngFor="let item of order.orderItems">
+                {{ item.name }} - {{ item.quantity }}
+            </p>
+        </td>
+        <td>{{ order.totalPrice }}</td>
+        <td>{{ order.user.id }}</td>
+    </tr>
+</table>

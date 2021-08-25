@@ -1,0 +1,59 @@
+<div class="header">
+  <div routerLink='/'>
+    <img class="logo"
+         src="assets/logo.jpg"
+         alt="icon"
+    >
+  </div>
+  <div class="header-navigation">
+    <span 
+      class="header-navigation-item"
+      *ngFor="let navItem of navigation"
+      (click)="navigate(navItem)"
+      [ngClass]="navItem.name"
+    >
+      {{ navItem.name }}
+    </span>
+  </div>
+  <div 
+    class="header-basket-icon"
+    (click)="openBasket()"
+  >
+    <img src="assets/basket.svg">
+  </div>
+  <div 
+    class="header-basket"
+    *ngIf="isBasketOpen"
+  >
+    <div 
+      class="header-basket-close"
+      (click)="isBasketOpen = false"
+    >x</div>
+    <div *ngFor="let item of order">
+      <app-basket-item 
+        [item]=item
+        (deleteEvent)="onDelete(item.data.id)"
+      ></app-basket-item>
+    </div>
+
+    <div class="box">
+      <span class="box-right">Final</span>
+      <span class="box-left">{{ sum }} AMD</span>
+    </div>
+
+    <div class="order-code">
+      Your code {{ userId }}
+    </div>
+  
+  <div class="order" [ngClass]="{'disabled': isDisable()}">
+    <span
+      class="order-button" 
+      (click)=orderFood()
+    >Պատվիրել</span>
+  </div>
+
+
+  </div>
+</div>
+
+

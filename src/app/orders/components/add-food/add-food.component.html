@@ -1,0 +1,66 @@
+<div class="wrapper">
+  <form [formGroup]="foodForm" (ngSubmit)="onSubmit()" class="main fadeInDown"> 
+    <div class="form-group">
+      <label class="form-label">name</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="name"
+      />
+      <div *ngIf="foodForm.controls['name'].errors && 
+      foodForm.controls['name'].invalid &&
+      foodForm.controls['name'].dirty">
+        <div *ngIf="foodForm.controls['name'].errors.required" class="form-error">
+          Please enter a name
+        </div>
+        <div *ngIf="foodForm.controls['name'].errors.minlength" class="form-error">
+          Min length for name is 3
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">description</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="description"
+      />
+      <div *ngIf="foodForm.controls['description'].errors && 
+        foodForm.controls['description'].invalid &&
+        foodForm.controls['description'].dirty">
+        <div *ngIf="foodForm.controls['description'].errors.required" class="form-error">
+          Please enter a description
+        </div>
+        <div *ngIf="foodForm.controls['description'].errors.minlength" class="form-error">
+          Min length for description is 3
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+        <label class="form-label">price</label>
+        <input
+          type="number"
+          class="form-control"
+          formControlName="price"
+        />
+        <div *ngIf="foodForm.controls['price'].errors && 
+            foodForm.controls['price'].invalid &&
+            foodForm.controls['price'].dirty">
+          <div *ngIf="foodForm.controls['description'].errors.required" class="form-error">
+            Please enter a description
+          </div>
+        </div>
+    </div>      
+    <input
+      #file
+      type="file"
+      class="form-upload-file"
+      (change)="onChange()"
+    />
+
+    <button class="form-submit" type="submit">Add food</button>
+  </form>
+</div>
+
+  
+

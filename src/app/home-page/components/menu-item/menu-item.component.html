@@ -1,0 +1,34 @@
+<div class="menu-item">
+    <div  
+        [ngClass]=" 'menu-item-img-' + (index%3 + 1) "
+        #menuItem
+    >
+        <div class="menu-item-price">
+            <span class="menu-item-price-text">{{ item.price }} AMD</span>
+        </div>
+        <img 
+            *ngIf="item.assets.length > 0"
+            class="menu-item-food"
+            [src]="item.assets[0].uri"
+            alt="food"
+        />
+    </div>
+    <div 
+        *ngIf="isHovered"
+        class="menu-item-hover"
+    >
+        <div class="menu-item-quantity">
+            <p class="menu-item-decrement" (click)=onDecrement()>-</p>
+            <p class="menu-item-number">{{ quantity }}</p>
+            <p class="menu-item-increment" (click)=onIncrement()>+</p>
+        </div>
+
+        <div class="menu-item-add-basket" (click)=addToBasket()>
+            <span>Add To Basket</span>
+        </div>
+    </div>
+    <div class="menu-item-title">{{ item.name }}</div>
+    <div class="menu-item-description">
+        <p>{{ item.description }}</p>
+    </div>
+</div>

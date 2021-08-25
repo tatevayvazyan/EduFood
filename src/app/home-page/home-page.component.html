@@ -1,12 +1,19 @@
-<img class="home-page-main-img" src="assets/hero.svg" alt="hjk">
-<div class="transparent-white-rect">
-  <span class="good-morning-text"> Good Morning! Hungry?</span>
-  <p class="text">Everything I’ve been craving this winter. In one pretty little bowl.</p>
-  <p class="text">ANNE JHONS</p>
-  <section [ngStyle]="{flexDirection: 'column'}">
-    <button class="dishesButton"> Dishes</button>
-    <button class="nextButton">
-      <img src="assets/arrow.svg" alt="arrow">
-    </button>
-  </section>
+<div class="home-page-header">
+  <div class="home-page-header-transparent-rect">
+    <span class="good-morning-text"> Good Morning! Hungry?</span>
+    <p class="text">Everything I’ve been craving this winter. In one pretty little bowl.</p>
+    <p class="text">ANNE JHONS</p>
+  </div>
+</div>
+<div class="home-page-menu-items">
+  <div 
+  class="home-page-menu-item"
+  *ngFor="let item of menu; let i=index"
+>
+  <app-menu-item
+    [item]="item"
+    [index]="i"
+  ></app-menu-item>
+</div>
+
 </div>

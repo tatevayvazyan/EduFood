@@ -1,56 +1,78 @@
-<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-  <div class="form-group">
-    <label class="form-label">Name</label>
-    <input
-      type="text"
-      class="form-control"
-      formControlName="name"
-    />
-    <div *ngIf="userForm.controls['name'].errors">
-      <div *ngIf="userForm.controls['name'].errors.required" class="form-error">
-        Please enter a name
-      </div>
-      <div *ngIf="userForm.controls['name'].errors.minlength" class="form-error">
-        min length for name is 3
-      </div>
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="form-label">Email</label>
-    <input
-      type="text"
-      class="form-control"
-      formControlName="email"
-    />
-    <div *ngIf="userForm.controls['email'].hasError('pattern')" class="form-error">
-      This is not valid email
-    </div>
-  </div>
-  <div formGroupName="address">
+<div class="wrapper">
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="main fadeInDown">
     <div class="form-group">
-      <label class="form-label">Country</label>
+      <label class="form-label">firstname</label>
       <input
         type="text"
         class="form-control"
-        formControlName="country"
+        formControlName="firstName"
       />
+      <div *ngIf="userForm.controls['firstName'].errors && 
+        userForm.controls['firstName'].invalid &&
+        userForm.controls['firstName'].dirty">
+        <div *ngIf="userForm.controls['firstName'].errors.required" class="form-error">
+          Please enter a firstname
+        </div>
+        <div *ngIf="userForm.controls['firstName'].errors.minlength" class="form-error">
+          min length for firstname is 3
+        </div>
+      </div>
     </div>
     <div class="form-group">
-      <label class="form-label">City</label>
+      <label class="form-label">lastname</label>
       <input
         type="text"
         class="form-control"
-        formControlName="city"
+        formControlName="lastName"
       />
+      <div *ngIf="userForm.controls['lastName'].errors && 
+        userForm.controls['lastName'].invalid &&
+        userForm.controls['lastName'].dirty">
+        <div *ngIf="userForm.controls['lastName'].errors.required" class="form-error">
+          Please enter a lastname
+        </div>
+        <div *ngIf="userForm.controls['lastName'].errors.minlength" class="form-error">
+          min length for lastname is 3
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <label class="form-label">Age</label>
-    <input
-      type="number"
-      class="form-control"
-      formControlName="age"
-    />
-  </div>
-  <button type="submit">Submit</button>
-</form>
+    <div class="form-group">
+      <label class="form-label">username</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="username"
+      />
+      <div *ngIf="userForm.controls['username'].errors && 
+        userForm.controls['username'].invalid &&
+        userForm.controls['username'].dirty">
+        <div *ngIf="userForm.controls['username'].errors.required" class="form-error">
+          Please enter a username
+        </div>
+        <div *ngIf="userForm.controls['username'].errors.minlength" class="form-error">
+          min length for username is 3
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">password</label>
+      <input
+        type="password"
+        class="form-control"
+        formControlName="password"
+      />
+      <div *ngIf="userForm.controls['password'].errors && 
+        userForm.controls['password'].invalid &&
+        userForm.controls['password'].dirty">
+        <div *ngIf="userForm.controls['password'].errors.required" class="form-error">
+          Please enter a password
+        </div>
+        <div *ngIf="userForm.controls['password'].errors.minlength" class="form-error">
+          min length for password is 3
+        </div>
+      </div>
+    </div>
+   
+    <button class="form-submit" type="submit">Submit</button>
+  </form>
+</div>

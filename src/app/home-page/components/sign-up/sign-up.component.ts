@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { HttpMethodsService } from 'src/app/services/http-methods.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -9,21 +11,26 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class SignUpComponent implements OnInit {
   userForm: any;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private httpMethodsService: HttpMethodsService,
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
     this.userForm = this.formBuilder.group({
-      name: ['', [Validators.required, Validators.minLength(3)]],
-      email: [null, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')],
-      address: this.formBuilder.group({
-        country: [],
-        city: [],
-      }),
-      age: [],
+      firstName: ['', [Validators.required, Validators.minLength(3)]],
+      lastName: ['', [Validators.required, Validators.minLength(3)]],
+      username: ['', [Validators.required, Validators.minLength(3)]],
+      password: ['', [Validators.required, Validators.minLength(3)]],
+      role: ['CUSTOMER'],
     })
   }
 
   onSubmit(): void {
-    console.log(this.userForm.value)
+    this.httpMethodsService.addItem('user/create', this.userForm.value)
+      .subscribe(data => {
+        this.router.navigateByUrl('signIn')
+      });
   }
 }

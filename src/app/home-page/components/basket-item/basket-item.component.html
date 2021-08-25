@@ -1,0 +1,21 @@
+<div class="basket-item">
+    <img 
+    class="basket-item-delete-icon" 
+    src="assets/delete-icon.svg" 
+    (click)=delete()
+    />
+    <img class="basket-item-img" [src]="item.uri" />
+    <div class="basket-item-info">
+        <div class="basket-item-info-quantity">
+            <p>
+                <span>{{ item.quantity }}</span>
+                <span class="basket-item-info-mult">x</span>
+                <span>{{ item.title }}</span>
+            </p>
+        </div>
+        <div class="basket-item-info-price">
+            <p>{{ item.price }} AMD</p>
+        </div>
+    </div>
+</div>
+

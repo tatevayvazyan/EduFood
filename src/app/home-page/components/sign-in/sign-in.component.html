@@ -1,1 +1,42 @@
-<p>sign-in works!</p>
+<div class="wrapper">
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="main fadeInDown">
+    <div class="form-group">
+      <label class="form-label">username</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="username"
+      />
+      <div *ngIf="userForm.controls['username'].errors && 
+        userForm.controls['username'].invalid &&
+        userForm.controls['username'].dirty">
+        <div *ngIf="userForm.controls['username'].errors.required" class="form-error">
+          Please enter a username
+        </div>
+        <div *ngIf="userForm.controls['username'].errors.minlength" class="form-error">
+          Min length for username is 3
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">password</label>
+      <input
+        type="password"
+        class="form-control"
+        formControlName="password"
+      />
+      <div *ngIf="userForm.controls['password'].errors && 
+        userForm.controls['password'].invalid &&
+        userForm.controls['password'].dirty">
+        <div *ngIf="userForm.controls['password'].errors.required" class="form-error">
+          Please enter a password
+        </div>
+        <div *ngIf="userForm.controls['password'].errors.minlength" class="form-error">
+          Min length for password is 3
+        </div>
+      </div>
+    </div>
+    <div *ngIf="isNotValid">This user dosen't exist, sign up first!</div>
+    <button class="form-submit" type="submit">Submit</button>
+  </form>
+</div>
