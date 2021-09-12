@@ -32,24 +32,24 @@
     <div *ngFor="let item of order">
       <app-basket-item 
         [item]=item
-        (deleteEvent)="onDelete(item.data.id)"
+        (deleteEvent)="onDelete(item.id)"
       ></app-basket-item>
     </div>
 
     <div class="box">
-      <span class="box-right">Final</span>
-      <span class="box-left">{{ sum }} AMD</span>
+      <span class="box-right">Վերջնական գումար</span>
+      <span class="box-left">{{ sum }} դրամ</span>
     </div>
 
     <div class="order-code">
-      Your code {{ userId }}
+      Անհատական կոդ {{ userId }}
     </div>
   
   <div class="order" [ngClass]="{'disabled': isDisable()}">
     <span
       class="order-button" 
       (click)=orderFood()
-    >Պատվիրել</span>
+    >{{ isOrdered ? 'Պատվիրված է' : 'Պատվիրել'}}</span>
   </div>
 
 

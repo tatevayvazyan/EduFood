@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpMethodsService } from 'src/app/services/http-methods.service';
+import { Role } from '../../models/menu-item';
 
 @Component({
   selector: 'app-sign-up',
@@ -21,9 +22,12 @@ export class SignUpComponent implements OnInit {
     this.userForm = this.formBuilder.group({
       firstName: ['', [Validators.required, Validators.minLength(3)]],
       lastName: ['', [Validators.required, Validators.minLength(3)]],
+      classNumber: ['', [Validators.required, Validators.minLength(3)]],
       username: ['', [Validators.required, Validators.minLength(3)]],
       password: ['', [Validators.required, Validators.minLength(3)]],
-      role: ['CUSTOMER'],
+      email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@mskh.am")]],
+      phoneNumber: ['', [Validators.required, Validators.minLength(9)]],
+      role: [Role.customer],
     })
   }
 

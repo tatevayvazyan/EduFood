@@ -79,6 +79,10 @@ input[type=text], input[type=number], input[type=password] {
   color: #FFFFFF;
   border :none;
   margin-top: 5%;
+
+  &.disabled {
+    background-color: grey;
+  }
 }
 
 .form-submit:hover {

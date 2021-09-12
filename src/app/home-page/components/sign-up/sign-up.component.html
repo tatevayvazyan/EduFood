@@ -1,7 +1,7 @@
 <div class="wrapper">
   <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="main fadeInDown">
     <div class="form-group">
-      <label class="form-label">firstname</label>
+      <label class="form-label">Անուն</label>
       <input
         type="text"
         class="form-control"
@@ -11,15 +11,15 @@
         userForm.controls['firstName'].invalid &&
         userForm.controls['firstName'].dirty">
         <div *ngIf="userForm.controls['firstName'].errors.required" class="form-error">
-          Please enter a firstname
+          մուտքագրիր անունը
         </div>
         <div *ngIf="userForm.controls['firstName'].errors.minlength" class="form-error">
-          min length for firstname is 3
+          Մինիմում 3 տառ
         </div>
       </div>
     </div>
     <div class="form-group">
-      <label class="form-label">lastname</label>
+      <label class="form-label">Ազգանուն</label>
       <input
         type="text"
         class="form-control"
@@ -29,15 +29,33 @@
         userForm.controls['lastName'].invalid &&
         userForm.controls['lastName'].dirty">
         <div *ngIf="userForm.controls['lastName'].errors.required" class="form-error">
-          Please enter a lastname
+          մուտքագրիր ազգանունը
         </div>
         <div *ngIf="userForm.controls['lastName'].errors.minlength" class="form-error">
-          min length for lastname is 3
+          Մինիմում 3 տառ
         </div>
       </div>
     </div>
     <div class="form-group">
-      <label class="form-label">username</label>
+      <label class="form-label">Դասարան</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="classNumber"
+      />
+      <div *ngIf="userForm.controls['classNumber'].errors && 
+        userForm.controls['classNumber'].invalid &&
+        userForm.controls['classNumber'].dirty">
+        <div *ngIf="userForm.controls['classNumber'].errors.required" class="form-error">
+          մուտքագրիր դասարանը
+        </div>
+        <div *ngIf="userForm.controls['classNumber'].errors.minlength" class="form-error">
+          Մինիմում 3 նշան, օրինակ 8/1
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Օգտանուն</label>
       <input
         type="text"
         class="form-control"
@@ -47,15 +65,15 @@
         userForm.controls['username'].invalid &&
         userForm.controls['username'].dirty">
         <div *ngIf="userForm.controls['username'].errors.required" class="form-error">
-          Please enter a username
+          մուտքագրիր օգտանունը
         </div>
         <div *ngIf="userForm.controls['username'].errors.minlength" class="form-error">
-          min length for username is 3
+          Մինիմում 3 տառ
         </div>
       </div>
     </div>
     <div class="form-group">
-      <label class="form-label">password</label>
+      <label class="form-label">Գաղտնաբառ</label>
       <input
         type="password"
         class="form-control"
@@ -65,14 +83,57 @@
         userForm.controls['password'].invalid &&
         userForm.controls['password'].dirty">
         <div *ngIf="userForm.controls['password'].errors.required" class="form-error">
-          Please enter a password
+          մուտքագրիր գաղտնաբառը
         </div>
         <div *ngIf="userForm.controls['password'].errors.minlength" class="form-error">
-          min length for password is 3
+          Մինիմում 3 տառ
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Էլ. հասցե</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="email"
+      />
+      <div *ngIf="userForm.controls['email'].errors && 
+        userForm.controls['email'].invalid &&
+        userForm.controls['email'].dirty">
+        <div *ngIf="userForm.controls['email'].errors.required" class="form-error">
+          մուտքագրիր էլ. հասցեն
+        </div>
+        <div *ngIf="userForm.controls['email'].errors.pattern" class="form-error">
+          Սխալ Էլ. հասցե
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Հեռախոսահամար</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="phoneNumber"
+      />
+      <div *ngIf="userForm.controls['phoneNumber'].errors && 
+        userForm.controls['phoneNumber'].invalid &&
+        userForm.controls['phoneNumber'].dirty">
+        <div *ngIf="userForm.controls['phoneNumber'].errors.required" class="form-error">
+          մուտքագրիր հեռախոսահամարը
+        </div>
+        <div *ngIf="userForm.controls['phoneNumber'].errors.minlength" class="form-error">
+          Մինիմում 9 նիշ
         </div>
       </div>
     </div>
    
-    <button class="form-submit" type="submit">Submit</button>
+    <button 
+      [ngClass]="{'disabled': !userForm.valid}"
+      [disabled]='!userForm.valid' 
+      class="form-submit" 
+      type="submit"
+      >
+        Գրանցվել
+    </button>
   </form>
 </div>

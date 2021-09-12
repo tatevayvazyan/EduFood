@@ -6,7 +6,7 @@
         position: absolute;
         top: 0;
         width: 350px;
-        height: 350px;
+        height: 250px;
         background: rgba(237, 162, 111, 0.71);
         border-radius: 30px;
         z-index: 4;
@@ -54,8 +54,9 @@
     &-img-1, &-img-2, &-img-3 {
         position: relative;
         width: 350px;
-        height: 350px;
+        height: 250px;
         background-image: url('/assets/yellow-bg.png');
+        background-position: 62px 0;
         background-size: contain;
         background-repeat: no-repeat;
         z-index: 1;
@@ -63,17 +64,19 @@
 
     &-img-2 {
         background-image: url('/assets/blue-bg.png');
+        background-position: 0 0;
     }
 
     &-img-3 {
         background-image: url('/assets/red-bg.png');
+        background-position: 0 0;
     }
 
     &-title {
         font-family: Red Hat Display;
         font-style: normal;
         font-weight: bold;
-        font-size: 36px;
+        font-size: 26px;
         line-height: 48px;
         color: #2A2D26;
     }
@@ -86,6 +89,10 @@
         font-size: 18px;
         line-height: 24px;
         color: #2A2D26;
+
+        p {
+            margin-bottom: 80px;
+        }
     }
 
     &-quantity {
@@ -148,7 +155,7 @@
         align-items: center;
         color: white;
         margin-top: 26px;
-        font-size: 26px;
+        font-size: 20px;
         cursor: pointer;
     }
 }

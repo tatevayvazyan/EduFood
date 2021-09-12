@@ -15,6 +15,7 @@
   
     &-transparent-rect {
       position: absolute;
+      right: 0;
       width: 400px;
       height: 100%;
       margin-left: 50%;
@@ -34,6 +35,18 @@
 
   &-menu-item {
     width: 30%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .home-page-menu-item {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .home-page-menu-item {
+    width: 100%;
   }
 }
 
@@ -77,6 +90,7 @@ $buttonSize: 67px;
   font-size: 20px;
   line-height: 32px;
   color: #565E48;
+  margin-top: 12%;
 }
 
 .dishesButton {

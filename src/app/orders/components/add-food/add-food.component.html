@@ -1,7 +1,7 @@
 <div class="wrapper">
   <form [formGroup]="foodForm" (ngSubmit)="onSubmit()" class="main fadeInDown"> 
     <div class="form-group">
-      <label class="form-label">name</label>
+      <label class="form-label">Անուն</label>
       <input
         type="text"
         class="form-control"
@@ -11,7 +11,7 @@
       foodForm.controls['name'].invalid &&
       foodForm.controls['name'].dirty">
         <div *ngIf="foodForm.controls['name'].errors.required" class="form-error">
-          Please enter a name
+          Մուտքագրեք սննդի անվանումը
         </div>
         <div *ngIf="foodForm.controls['name'].errors.minlength" class="form-error">
           Min length for name is 3
@@ -19,7 +19,7 @@
       </div>
     </div>
     <div class="form-group">
-      <label class="form-label">description</label>
+      <label class="form-label">նկարագրություն</label>
       <input
         type="text"
         class="form-control"
@@ -29,7 +29,7 @@
         foodForm.controls['description'].invalid &&
         foodForm.controls['description'].dirty">
         <div *ngIf="foodForm.controls['description'].errors.required" class="form-error">
-          Please enter a description
+          Մուտքագրեք սննդի նկարագրությունը
         </div>
         <div *ngIf="foodForm.controls['description'].errors.minlength" class="form-error">
           Min length for description is 3
@@ -37,7 +37,7 @@
       </div>
     </div>
     <div class="form-group">
-        <label class="form-label">price</label>
+        <label class="form-label">Արժեք</label>
         <input
           type="number"
           class="form-control"
@@ -47,7 +47,7 @@
             foodForm.controls['price'].invalid &&
             foodForm.controls['price'].dirty">
           <div *ngIf="foodForm.controls['description'].errors.required" class="form-error">
-            Please enter a description
+            Մուտքագրեք սննդի արժեքը
           </div>
         </div>
     </div>      
@@ -58,7 +58,7 @@
       (change)="onChange()"
     />
 
-    <button class="form-submit" type="submit">Add food</button>
+    <button class="form-submit" type="submit">Ավելացնել</button>
   </form>
 </div>
 

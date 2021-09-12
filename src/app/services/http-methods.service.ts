@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class HttpMethodsService {
-  baseUrl = 'http://localhost:8080';
+  baseUrl = 'https://api-edufood.mskh.am';
 
   constructor(private http: HttpClient) {}
 

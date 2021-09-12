@@ -4,7 +4,7 @@
         #menuItem
     >
         <div class="menu-item-price">
-            <span class="menu-item-price-text">{{ item.price }} AMD</span>
+            <span class="menu-item-price-text">{{ item.price }} դրամ</span>
         </div>
         <img 
             *ngIf="item.assets.length > 0"
@@ -24,7 +24,7 @@
         </div>
 
         <div class="menu-item-add-basket" (click)=addToBasket()>
-            <span>Add To Basket</span>
+            <span>Ուղարկել զամբյուղ</span>
         </div>
     </div>
     <div class="menu-item-title">{{ item.name }}</div>

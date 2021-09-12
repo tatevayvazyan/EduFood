@@ -40,6 +40,7 @@
 
   &-basket {
     width: 30%;
+    min-width: 330px;
     min-height: 700px;
     position: absolute;
     right: 0px;
@@ -73,12 +74,12 @@
     font-family: Red Hat Display;
     font-style: normal;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 32px;
     text-transform: uppercase;
     color: #000000;
     padding: 3%;
-    margin-top: 6%;
+    margin-top: 3%;
     justify-content: start;
     margin-left: 20px;
 
@@ -88,12 +89,12 @@
     font-family: Red Hat Display;
     font-style: normal;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 32px;
     text-transform: uppercase;
     color: #000000;
     padding: 3%;
-    margin-top: 6%;
+    margin-top: 3%;
     justify-content: end;
     margin-left: 58px;
 
@@ -124,5 +125,12 @@
     font-size: 30px;
     line-height: 48px;
     text-transform: uppercase;
+  }
+
+  &-code {
+    font-size: 20px;
+    color: #EC7523;
+    margin-top: 3%;
+    margin-left: 28%;
   }
 }

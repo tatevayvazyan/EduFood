@@ -13,10 +13,12 @@ import { Subscription } from 'rxjs';
 })
 export class HeaderComponent implements OnInit {
   isBasketOpen: boolean = false;
+  isOrdered: boolean = false;
   order: any;
   navigation: any;
   subscription: any;
   userId: any;
+  isValid: string | null= 'false';
   
   get sum(): number {
     return this.order.reduce((sum: number, item: any) => sum + item.price * item.quantity, 0);
@@ -34,6 +36,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.userId = window.localStorage.getItem('userId');
+    this.isValid = window.localStorage.getItem('isValid');
   }
 
   ngOnDestroy() {
@@ -48,6 +51,9 @@ export class HeaderComponent implements OnInit {
   openBasket(): void {
     this.order = this.orderDataService.getItems();
     this.isBasketOpen = true;
+    this.isOrdered = false;
+    this.userId = window.localStorage.getItem('userId');
+    this.isValid = window.localStorage.getItem('isValid');
   }
 
   onDelete(id: number): void {
@@ -56,7 +62,7 @@ export class HeaderComponent implements OnInit {
 
   isDisable(): boolean {
     const date = (new Date).getHours();
-    if (date < 8 || date > 10) {
+    if ((date <= 18 && date >= 10) || !this.isValid || this.isValid === 'false') {
       return true;
     }
     return false;
@@ -71,6 +77,7 @@ export class HeaderComponent implements OnInit {
     this.httpMethodsService.addItem(`order/create/${userId}`, { items: order })
       .subscribe((data => {
         this.order = [];
+        this.isOrdered = true;
       }));
   }
 }

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './home-page/components/header/header.component';
+import { FooterComponent } from './home-page/components/footer/footer.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ListItemComponent } from './home-page/components/list-item/list-item.component';
@@ -18,6 +19,7 @@ import { NavigationService } from './services/navigation.service';
     HeaderComponent,
     ListItemComponent,
     BasketItemComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,30 +1,31 @@
 import { Injectable, OnInit } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { Role } from '../home-page/models/menu-item';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NavigationService {
     readonly navigationCustomer = [{
-        name: 'Sign In', 
+        name: 'Մուտք գործել', 
         path: 'signIn'
         }, {
-            name: 'Sign Up', 
+            name: 'Գրանցվել', 
             path: 'signUp'
         }
     ];
 
     readonly navigationAdmin = [{
-        name: 'Sign In', 
+        name: 'Մուտք գործել', 
         path: 'signIn'
         }, {
-        name: 'Sign Up', 
+        name: 'Գրանցվել', 
         path: 'signUp'
         }, {
-        name: 'Orders', 
+        name: 'Պատվերներ', 
         path: 'orders'
         }, {
-        name: 'Add food', 
+        name: 'Ավելացնել սնունդ', 
         path: 'orders/add'
         }
     ];
@@ -40,7 +41,7 @@ export class NavigationService {
 
     setItem(): void {
         const role = window.localStorage.getItem('role');
-        if (role === 'ADMIN') {
+        if (role === Role.admin) {
             this.navigation.next(this.navigationAdmin);
         } else {
             this.navigation.next(this.navigationCustomer);
