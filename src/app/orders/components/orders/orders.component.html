@@ -1,20 +1,22 @@
-<table>
-    <thead>
-        <tr>
-            <th>Օգտանուն</th>
-            <th>Պատվեր</th>
-            <th>Արժեք</th>
-            <th>Անհատական կոդ</th>
+<div class="wrapper">
+    <table>
+        <thead>
+            <tr>
+                <th>Օգտանուն</th>
+                <th>Պատվեր</th>
+                <th>Արժեք</th>
+                <th>Անհատական կոդ</th>
+            </tr>
+        </thead>
+        <tr *ngFor="let order of orders">
+            <td>{{ order.user.username }}</td>
+            <td>
+                <p *ngFor="let item of order.orderItems">
+                    {{ item.name }} - {{ item.quantity }}
+                </p>
+            </td>
+            <td>{{ order.totalPrice }}</td>
+            <td>{{ order.user.id }}</td>
         </tr>
-    </thead>
-    <tr *ngFor="let order of orders">
-        <td>{{ order.user.username }}</td>
-        <td>
-            <p *ngFor="let item of order.orderItems">
-                {{ item.name }} - {{ item.quantity }}
-            </p>
-        </td>
-        <td>{{ order.totalPrice }}</td>
-        <td>{{ order.user.id }}</td>
-    </tr>
-</table>
+    </table>
+</div>

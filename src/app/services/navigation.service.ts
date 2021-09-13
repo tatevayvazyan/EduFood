@@ -16,17 +16,20 @@ export class NavigationService {
     ];
 
     readonly navigationAdmin = [{
-        name: 'Մուտք գործել', 
-        path: 'signIn'
+            name: 'Մուտք գործել', 
+            path: 'signIn'
         }, {
-        name: 'Գրանցվել', 
-        path: 'signUp'
+            name: 'Գրանցվել', 
+            path: 'signUp'
         }, {
-        name: 'Պատվերներ', 
-        path: 'orders'
+            name: 'Պատվերներ', 
+            path: 'orders'
         }, {
-        name: 'Ավելացնել սնունդ', 
-        path: 'orders/add'
+            name: 'Ավելացնել սնունդ', 
+            path: 'orders/add'
+        }, {
+            name: 'Օգտագործողներ', 
+            path: 'users'
         }
     ];
 

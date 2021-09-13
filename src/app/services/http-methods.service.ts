@@ -29,13 +29,13 @@ export class HttpMethodsService {
   }
 
   /** DELETE: delete the item from the server */
-  deleteItem(path: string, id: number): Observable<unknown> {
-    return this.http.delete(`${this.baseUrl}/${path}/${id}`);
+  deleteItem(path: string): Observable<unknown> {
+    return this.http.delete(`${this.baseUrl}/${path}`);
   }
 
   /** PUT: update the item on the server. Returns the updated item upon success. */
-  updateItem(path: string, item: any, id: number): Observable<any> {
-    return this.http.put<any>(`${this.baseUrl}/${path}/${id}`, item);
+  updateItem(path: string, item?: any): Observable<any> {
+    return this.http.put<any>(`${this.baseUrl}/${path}`, item);
   }
 
   /** PATCH: update the item on the server partially. Returns the updated item upon success. */

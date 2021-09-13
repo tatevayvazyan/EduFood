@@ -6,6 +6,7 @@ import { HomePageRoutingModule } from './home-page-routing.module';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { MenuItemComponent } from './components/menu-item/menu-item.component';
+import { UsersComponent } from './components/users/users.component';
 
 @NgModule({
   declarations: [ 
@@ -13,6 +14,7 @@ import { MenuItemComponent } from './components/menu-item/menu-item.component';
     SignUpComponent, 
     SignInComponent,
     MenuItemComponent,
+    UsersComponent,
   ],
   imports: [
     CommonModule,

@@ -62,7 +62,7 @@ export class HeaderComponent implements OnInit {
 
   isDisable(): boolean {
     const date = (new Date).getHours();
-    if ((date <= 18 && date >= 10) || !this.isValid || this.isValid === 'false') {
+    if ((date <= 18 && date >= 10) || !this.isValid || this.isValid === 'false' || this.order.length === 0) {
       return true;
     }
     return false;
@@ -76,7 +76,7 @@ export class HeaderComponent implements OnInit {
     });
     this.httpMethodsService.addItem(`order/create/${userId}`, { items: order })
       .subscribe((data => {
-        this.order = [];
+        this.order = this.orderDataService.deleteOrder();
         this.isOrdered = true;
       }));
   }

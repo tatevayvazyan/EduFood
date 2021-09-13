@@ -23,3 +23,18 @@ th {
     color: #EC7523;
     text-transform: uppercase;
 }
+
+.user {
+    &-confirm {
+        cursor:pointer;
+        color: #EC7523;
+    }
+
+    &-delete-icon {
+        width: 20px;
+        height: 20px;
+        padding: 0 16px;
+        cursor: pointer;
+    }
+}
+

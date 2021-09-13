@@ -56,7 +56,6 @@
         width: 350px;
         height: 250px;
         background-image: url('/assets/yellow-bg.png');
-        background-position: 62px 0;
         background-size: contain;
         background-repeat: no-repeat;
         z-index: 1;
@@ -64,12 +63,10 @@
 
     &-img-2 {
         background-image: url('/assets/blue-bg.png');
-        background-position: 0 0;
     }
 
     &-img-3 {
         background-image: url('/assets/red-bg.png');
-        background-position: 0 0;
     }
 
     &-title {

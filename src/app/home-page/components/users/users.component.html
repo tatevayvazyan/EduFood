@@ -1,0 +1,42 @@
+<div class="wrapper">
+    <table>
+        <thead>
+            <tr>
+                <th>Անուն</th>
+                <th>Ազգանուն</th>
+                <th>Օգտանուն</th>
+                <th>Էլ. հասցե</th>
+                <th>Հեռախոս</th>
+                <th>Դասարան</th>
+                <th>Անհատական կոդ</th>
+                <th>Վավեր է</th>
+                <th>Հաստատել</th>
+                <th>Ջնջել</th>
+            </tr>
+        </thead>
+        <tr *ngFor="let user of users">
+            <td>{{ user.firstName }}</td>
+            <td>{{ user.lastName }}</td>
+            <td>{{ user.username }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.phoneNumber }}</td>
+            <td>{{ user.classNumber }}</td>
+            <td>{{ user.id }}</td>
+            <td>{{ user.valid }}</td>
+            <td
+                class="user-confirm" 
+                (click)=confirmUser(user.id)
+            >
+                Հաստատել
+            </td>
+            <td> 
+                <img 
+                class="user-delete-icon" 
+                src="assets/delete-icon.svg" 
+                (click)=deleteUser(user.id)
+                />
+            </td>
+        </tr>
+    </table>
+    
+</div>

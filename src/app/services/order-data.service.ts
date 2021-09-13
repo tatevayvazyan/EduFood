@@ -20,4 +20,9 @@ export class OrderDataService {
     this.order = this.order.filter(item => item.id !== id);
     return this.order;
   }
+
+  deleteOrder(): any {
+    this.order = [];
+    return this.order;
+  }
 }
